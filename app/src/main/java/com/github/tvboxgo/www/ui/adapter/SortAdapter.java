@@ -13,6 +13,7 @@ import java.util.ArrayList;
  * @description:
  */
 public class SortAdapter extends BaseQuickAdapter<MovieSort.SortData, BaseViewHolder> {
+
     public SortAdapter() {
         super(R.layout.item_home_sort, new ArrayList<>());
     }

@@ -9,6 +9,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,6 +41,7 @@ import com.github.tvboxgo.www.ui.tv.widget.FixedSpeedScroller;
 import com.github.tvboxgo.www.ui.tv.widget.NoScrollViewPager;
 import com.github.tvboxgo.www.ui.tv.widget.ViewObj;
 import com.github.tvboxgo.www.util.AppManager;
+import com.github.tvboxgo.www.util.Config;
 import com.github.tvboxgo.www.util.DefaultConfig;
 import com.github.tvboxgo.www.util.HawkConfig;
 import com.github.tvboxgo.www.util.LOG;
@@ -124,6 +126,7 @@ public class HomeActivity extends BaseActivity {
         this.mGridView.setAdapter(this.sortAdapter);
         this.mGridView.setOnItemListener(new TvRecyclerView.OnItemListener() {
             public void onItemPreSelected(TvRecyclerView tvRecyclerView, View view, int position) {
+                Log.e("answer", "onItemPreSelected");
                 if (view != null && !HomeActivity.this.isDownOrUp) {
                     view.animate().scaleX(1.0f).scaleY(1.0f).setDuration(300).start();
                     TextView textView = view.findViewById(R.id.tvTitle);
@@ -135,6 +138,7 @@ public class HomeActivity extends BaseActivity {
             }
 
             public void onItemSelected(TvRecyclerView tvRecyclerView, View view, int position) {
+                Log.e("answer", "onItemSelected");
                 if (view != null) {
                     HomeActivity.this.isDownOrUp = false;
                     HomeActivity.this.sortChange = true;
@@ -154,6 +158,7 @@ public class HomeActivity extends BaseActivity {
 
             @Override
             public void onItemClick(TvRecyclerView parent, View itemView, int position) {
+                Log.e("answer", "onItemClick");
                 if (itemView != null && currentSelected == position && !sortAdapter.getItem(position).filters.isEmpty()) { // 弹出筛选
                     BaseLazyFragment baseLazyFragment = fragments.get(currentSelected);
                     if ((baseLazyFragment instanceof GridFragment)) {
@@ -190,9 +195,11 @@ public class HomeActivity extends BaseActivity {
                 showSuccess();
                 if (absXml != null && absXml.classes != null && absXml.classes.sortList != null) {
                     sortAdapter.setNewData(DefaultConfig.adjustSort(ApiConfig.get().getHomeSourceBean().getKey(), absXml.classes.sortList, true));
+
                 } else {
                     sortAdapter.setNewData(DefaultConfig.adjustSort(ApiConfig.get().getHomeSourceBean().getKey(), new ArrayList<>(), true));
                 }
+                mGridView.setSelection(Config.NUM_ZERO);
                 initViewPager(absXml);
             }
         });

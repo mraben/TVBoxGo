@@ -54,10 +54,12 @@ public class VodController extends BaseController {
                     }
                     case 1002: { // 显示底部菜单
                         mBottomRoot.setVisibility(VISIBLE);
+                        mPlayTitle.setVisibility(VISIBLE);
                         break;
                     }
                     case 1003: { // 隐藏底部菜单
                         mBottomRoot.setVisibility(GONE);
+                        mPlayTitle.setVisibility(GONE);
                         break;
                     }
                     case 1004: { // 设置速度
