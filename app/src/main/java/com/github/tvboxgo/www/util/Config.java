@@ -5,6 +5,8 @@ import java.util.ArrayList;
 public class Config {
 
     private static  ArrayList<String> arrayList;
+    public static  final int  ANIMATE_DURATION = 5;
+    public static  final int  VIEWPAGER_DURATION = 10;
     public static  final int  NUM_ZERO = 0;
     public static  final int  NUM_ONE = 1;
     public static  final int  NUM_TWO = 2;
@@ -16,6 +18,7 @@ public class Config {
     public static  final int  NUM_EIGHT = 8;
     public static  final int  NUM_NINE = 9;
     public static  final int  NUM_TEN = 10;
+
 
     /**
      * 返回默认地址集合

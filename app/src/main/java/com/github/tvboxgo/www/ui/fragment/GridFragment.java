@@ -17,6 +17,7 @@ import com.github.tvboxgo.www.ui.activity.DetailActivity;
 import com.github.tvboxgo.www.ui.adapter.GridAdapter;
 import com.github.tvboxgo.www.ui.dialog.GridFilterDialog;
 import com.github.tvboxgo.www.ui.tv.widget.LoadMoreView;
+import com.github.tvboxgo.www.util.Config;
 import com.github.tvboxgo.www.util.FastClickCheckUtil;
 import com.github.tvboxgo.www.viewmodel.SourceViewModel;
 import com.owen.tvrecyclerview.widget.TvRecyclerView;
@@ -75,12 +76,12 @@ public class GridFragment extends BaseLazyFragment {
         mGridView.setOnItemListener(new TvRecyclerView.OnItemListener() {
             @Override
             public void onItemPreSelected(TvRecyclerView parent, View itemView, int position) {
-                itemView.animate().scaleX(1.0f).scaleY(1.0f).setDuration(300).setInterpolator(new BounceInterpolator()).start();
+                itemView.animate().scaleX(1.0f).scaleY(1.0f).setDuration(Config.ANIMATE_DURATION).setInterpolator(new BounceInterpolator()).start();
             }
 
             @Override
             public void onItemSelected(TvRecyclerView parent, View itemView, int position) {
-                itemView.animate().scaleX(1.05f).scaleY(1.05f).setDuration(300).setInterpolator(new BounceInterpolator()).start();
+                itemView.animate().scaleX(1.05f).scaleY(1.05f).setDuration(Config.ANIMATE_DURATION).setInterpolator(new BounceInterpolator()).start();
             }
 
             @Override

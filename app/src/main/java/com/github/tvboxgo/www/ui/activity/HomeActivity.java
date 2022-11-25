@@ -128,7 +128,7 @@ public class HomeActivity extends BaseActivity {
             public void onItemPreSelected(TvRecyclerView tvRecyclerView, View view, int position) {
                 Log.e("answer", "onItemPreSelected");
                 if (view != null && !HomeActivity.this.isDownOrUp) {
-                    view.animate().scaleX(1.0f).scaleY(1.0f).setDuration(300).start();
+                    view.animate().scaleX(1.0f).scaleY(1.0f).setDuration(Config.ANIMATE_DURATION).start();
                     TextView textView = view.findViewById(R.id.tvTitle);
                     textView.getPaint().setFakeBoldText(false);
                     textView.setTextColor(HomeActivity.this.getResources().getColor(R.color.color_BBFFFFFF));
@@ -142,7 +142,7 @@ public class HomeActivity extends BaseActivity {
                 if (view != null) {
                     HomeActivity.this.isDownOrUp = false;
                     HomeActivity.this.sortChange = true;
-                    view.animate().scaleX(1.1f).scaleY(1.1f).setInterpolator(new BounceInterpolator()).setDuration(300).start();
+                    view.animate().scaleX(1.1f).scaleY(1.1f).setInterpolator(new BounceInterpolator()).setDuration(Config.ANIMATE_DURATION).start();
                     TextView textView = view.findViewById(R.id.tvTitle);
                     textView.getPaint().setFakeBoldText(true);
                     textView.setTextColor(HomeActivity.this.getResources().getColor(R.color.color_FFFFFF));
@@ -365,7 +365,7 @@ public class HomeActivity extends BaseActivity {
                 field.setAccessible(true);
                 FixedSpeedScroller scroller = new FixedSpeedScroller(mContext, new AccelerateInterpolator());
                 field.set(mViewPager, scroller);
-                scroller.setmDuration(300);
+                scroller.setmDuration(Config.VIEWPAGER_DURATION);
             } catch (Exception e) {
             }
             mViewPager.setPageTransformer(true, new DefaultTransformer());

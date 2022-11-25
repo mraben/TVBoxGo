@@ -22,6 +22,7 @@ import com.github.tvboxgo.www.ui.activity.PushActivity;
 import com.github.tvboxgo.www.ui.activity.SearchActivity;
 import com.github.tvboxgo.www.ui.activity.SettingActivity;
 import com.github.tvboxgo.www.ui.adapter.HomeHotVodAdapter;
+import com.github.tvboxgo.www.util.Config;
 import com.github.tvboxgo.www.util.FastClickCheckUtil;
 import com.github.tvboxgo.www.util.HawkConfig;
 import com.google.gson.Gson;
@@ -140,12 +141,12 @@ public class UserFragment extends BaseLazyFragment implements View.OnClickListen
         tvHotList.setOnItemListener(new TvRecyclerView.OnItemListener() {
             @Override
             public void onItemPreSelected(TvRecyclerView parent, View itemView, int position) {
-                itemView.animate().scaleX(1.0f).scaleY(1.0f).setDuration(300).setInterpolator(new BounceInterpolator()).start();
+                itemView.animate().scaleX(1.0f).scaleY(1.0f).setDuration(Config.ANIMATE_DURATION).setInterpolator(new BounceInterpolator()).start();
             }
 
             @Override
             public void onItemSelected(TvRecyclerView parent, View itemView, int position) {
-                itemView.animate().scaleX(1.05f).scaleY(1.05f).setDuration(300).setInterpolator(new BounceInterpolator()).start();
+                itemView.animate().scaleX(1.05f).scaleY(1.05f).setDuration(Config.ANIMATE_DURATION).setInterpolator(new BounceInterpolator()).start();
             }
 
             @Override
@@ -228,9 +229,9 @@ public class UserFragment extends BaseLazyFragment implements View.OnClickListen
         @Override
         public void onFocusChange(View v, boolean hasFocus) {
             if (hasFocus)
-                v.animate().scaleX(1.05f).scaleY(1.05f).setDuration(300).setInterpolator(new BounceInterpolator()).start();
+                v.animate().scaleX(1.05f).scaleY(1.05f).setDuration(Config.ANIMATE_DURATION).setInterpolator(new BounceInterpolator()).start();
             else
-                v.animate().scaleX(1.0f).scaleY(1.0f).setDuration(300).setInterpolator(new BounceInterpolator()).start();
+                v.animate().scaleX(1.0f).scaleY(1.0f).setDuration(Config.ANIMATE_DURATION).setInterpolator(new BounceInterpolator()).start();
         }
     };
 
