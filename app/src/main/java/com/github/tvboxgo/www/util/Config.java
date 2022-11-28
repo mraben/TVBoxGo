@@ -46,8 +46,12 @@ public class Config {
             arrayList.add("clan://localhost/api/fzns/fzns.json");
             arrayList.add("clan://localhost/api/pb9c/pb9c.json");
             arrayList.add("clan://localhost/api/fuei/fuei.json");
-            arrayList.add("clan://localhost/api/ypfe/ypfe.json");
+//            arrayList.add("clan://localhost/api/ypfe/ypfe.json");
             arrayList.add("clan://localhost/api/gv97/gv97.json");
+            arrayList.add("clan://localhost/api/489x/489x.json");
+            arrayList.add("clan://localhost/api/5vdu/5vdu.json");
+            arrayList.add("clan://localhost/api/p6w5/p6w5.json");
+            arrayList.add("clan://localhost/api/hp75/hp75.json");
         }
         return arrayList;
     }
