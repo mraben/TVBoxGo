@@ -553,10 +553,26 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
     }
 
     /**
+     * 播放器事件回调
+     */
+    private LiveErrorListener mLiveErrorListener;
+
+    public interface LiveErrorListener {
+        void onError();
+    }
+
+    public void setLiveErrorListener(LiveErrorListener mLiveErrorListener){
+        this.mLiveErrorListener =mLiveErrorListener;
+    }
+
+    /**
      * 视频播放出错回调
      */
     @Override
     public void onError() {
+        if (null != mLiveErrorListener){
+            mLiveErrorListener.onError();
+        }
         mPlayerContainer.setKeepScreenOn(false);
         setPlayState(STATE_ERROR);
     }
