@@ -4,11 +4,15 @@ buildscript {
         gradlePluginPortal()
         google()
         mavenCentral()
-        maven { url "https://jitpack.io" }
-        maven { url 'https://download.01.org/crosswalk/releases/crosswalk/android/maven2' }
+        maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'https://mirrors.cloud.tencent.com/nexus/repository/maven-public/' }
+        maven { url 'https://repo.huaweicloud.com/repository/maven-public/' }
+        maven { url 'https://mirrors.tuna.tsinghua.edu.cn/maven/repository/public/' }
+        maven { url 'https://mirrors.ustc.edu.cn/maven/repository/public/' }
+        maven { url 'https://jitpack.io' }
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:4.2.1"
+        classpath 'com.android.tools.build:gradle:7.4.0'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -20,8 +24,12 @@ allprojects {
         gradlePluginPortal()
         google()
         mavenCentral()
-        maven { url "https://jitpack.io" }
-        maven { url 'https://download.01.org/crosswalk/releases/crosswalk/android/maven2' }
+        maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'https://mirrors.cloud.tencent.com/nexus/repository/maven-public/' }
+        maven { url 'https://repo.huaweicloud.com/repository/maven-public/' }
+        maven { url 'https://mirrors.tuna.tsinghua.edu.cn/maven/repository/public/' }
+        maven { url 'https://mirrors.ustc.edu.cn/maven/repository/public/' }
+        maven { url 'https://jitpack.io' }
     }
 }
 
